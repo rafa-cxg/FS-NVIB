@@ -33,7 +33,7 @@ The code was tested with Python 3.8.1 and Pytorch >= 1.7.0.
 ## Datasets
 
 
-### CIFAR-FS and Mini-ImageNet
+### CIFAR-FS 
 ```
 cd scripts
 sh download_cifarfs.sh
