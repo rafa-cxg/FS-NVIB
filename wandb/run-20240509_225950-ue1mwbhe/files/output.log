@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/mnt/d/JetBrains/PyCharm 2022.2.3/plugins/python/helpers/pydev/pydevd.py", line 1496, in _exec
+    pydev_imports.execfile(file, globals, locals)  # execute the script
+  File "/mnt/d/JetBrains/PyCharm 2022.2.3/plugins/python/helpers/pydev/_pydev_imps/_pydev_execfile.py", line 18, in execfile
+    exec(compile(contents+"\n", file, 'exec'), glob, loc)
+  File "/home/rafa/fs_learning/main.py", line 252, in <module>
+    main(args)
+  File "/home/rafa/fs_learning/main.py", line 52, in main
+    data_loader_train, data_loader_val = get_loaders(args, num_tasks, global_rank)
+  File "/home/rafa/fs_learning/datasets/__init__.py", line 75, in get_loaders
+    dataset_train, dataset_vals, _ = get_sets(args)
+  File "/home/rafa/fs_learning/datasets/__init__.py", line 43, in get_sets
+    trainSet = EpisodeDataset(imgDir = trainDir,
+  File "/home/rafa/fs_learning/datasets/episodic_dataset.py", line 33, in __init__
+    self.clsList = os.listdir(imgDir)
+FileNotFoundError: [Errno 2] No such file or directory: './data/Mini-ImageNet/train/'
+Not using distributed mode

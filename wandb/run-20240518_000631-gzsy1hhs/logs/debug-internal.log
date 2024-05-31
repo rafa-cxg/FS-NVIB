@@ -1,0 +1,193 @@
+2024-05-18 00:06:31,659 INFO    StreamThr :9077 [internal.py:wandb_internal():86] W&B internal server running at pid: 9077, started at: 2024-05-18 00:06:31.658902
+2024-05-18 00:06:31,661 DEBUG   HandlerThread:9077 [handler.py:handle_request():146] handle_request: status
+2024-05-18 00:06:31,664 INFO    WriterThread:9077 [datastore.py:open_for_write():87] open: /home/rafa/fs_learning/wandb/run-20240518_000631-gzsy1hhs/run-gzsy1hhs.wandb
+2024-05-18 00:06:31,668 DEBUG   SenderThread:9077 [sender.py:send():379] send: header
+2024-05-18 00:06:31,673 DEBUG   SenderThread:9077 [sender.py:send():379] send: run
+2024-05-18 00:06:32,296 INFO    SenderThread:9077 [dir_watcher.py:__init__():211] watching files in: /home/rafa/fs_learning/wandb/run-20240518_000631-gzsy1hhs/files
+2024-05-18 00:06:32,296 INFO    SenderThread:9077 [sender.py:_start_run_threads():1124] run started: gzsy1hhs with start time 1715983591.658215
+2024-05-18 00:06:32,299 DEBUG   HandlerThread:9077 [handler.py:handle_request():146] handle_request: check_version
+2024-05-18 00:06:32,300 DEBUG   SenderThread:9077 [sender.py:send_request():406] send_request: check_version
+2024-05-18 00:06:32,517 DEBUG   HandlerThread:9077 [handler.py:handle_request():146] handle_request: run_start
+2024-05-18 00:06:32,540 DEBUG   HandlerThread:9077 [system_info.py:__init__():26] System info init
+2024-05-18 00:06:32,541 DEBUG   HandlerThread:9077 [system_info.py:__init__():41] System info init done
+2024-05-18 00:06:32,541 INFO    HandlerThread:9077 [system_monitor.py:start():194] Starting system monitor
+2024-05-18 00:06:32,541 INFO    SystemMonitor:9077 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-05-18 00:06:32,541 INFO    HandlerThread:9077 [system_monitor.py:probe():214] Collecting system info
+2024-05-18 00:06:32,542 INFO    SystemMonitor:9077 [interfaces.py:start():190] Started cpu monitoring
+2024-05-18 00:06:32,542 INFO    SystemMonitor:9077 [interfaces.py:start():190] Started disk monitoring
+2024-05-18 00:06:32,544 INFO    SystemMonitor:9077 [interfaces.py:start():190] Started gpu monitoring
+2024-05-18 00:06:32,544 INFO    SystemMonitor:9077 [interfaces.py:start():190] Started memory monitoring
+2024-05-18 00:06:32,545 INFO    SystemMonitor:9077 [interfaces.py:start():190] Started network monitoring
+2024-05-18 00:06:32,565 DEBUG   HandlerThread:9077 [system_info.py:probe():150] Probing system
+2024-05-18 00:06:32,585 DEBUG   HandlerThread:9077 [system_info.py:_probe_git():135] Probing git
+2024-05-18 00:06:32,593 DEBUG   HandlerThread:9077 [system_info.py:_probe_git():143] Probing git done
+2024-05-18 00:06:32,593 DEBUG   HandlerThread:9077 [system_info.py:probe():198] Probing system done
+2024-05-18 00:06:32,593 DEBUG   HandlerThread:9077 [system_monitor.py:probe():223] {'os': 'Linux-5.15.146.1-microsoft-standard-WSL2-x86_64-with-glibc2.31', 'python': '3.9.7', 'heartbeatAt': '2024-05-17T22:06:32.565860', 'startedAt': '2024-05-17T22:06:31.651241', 'docker': None, 'cuda': None, 'args': ('--dist-eval', '--output', 'outputs/original_diet_small_lr1e-4', '--dataset', 'cifar_fs', '--epoch', '100', '--lr', '1e-5', '--arch', 'deit_small_patch16', '--nSupport', '5', '--delta', '1', '--alpha_tau', '-8', '--stdev_tau', '0', '--lambda_klg', '0.00', '--lambda_kld', '0.00', '--nvib', '--nvib_layers', '0', '1', '2', '3', '4', '5', '--no-pretrain'), 'state': 'running', 'program': '/home/rafa/fs_learning/main.py', 'codePathLocal': 'main.py', 'codePath': 'main.py', 'git': {'remote': 'https://github.com/FJFehr/fs_learning.git', 'commit': 'a8ca759eaf746f3cf93ef7802f975b7ab25a6789'}, 'email': '424400878@qq.com', 'root': '/home/rafa/fs_learning', 'host': 'rafa-laptop', 'username': 'rafa', 'executable': '/home/rafa/anaconda3/bin/python3', 'cpu_count': 8, 'cpu_count_logical': 16, 'cpu_freq': {'current': 3293.735999999999, 'min': 0.0, 'max': 0.0}, 'cpu_freq_per_core': [{'current': 3293.736, 'min': 0.0, 'max': 0.0}, {'current': 3293.736, 'min': 0.0, 'max': 0.0}, {'current': 3293.736, 'min': 0.0, 'max': 0.0}, {'current': 3293.736, 'min': 0.0, 'max': 0.0}, {'current': 3293.736, 'min': 0.0, 'max': 0.0}, {'current': 3293.736, 'min': 0.0, 'max': 0.0}, {'current': 3293.736, 'min': 0.0, 'max': 0.0}, {'current': 3293.736, 'min': 0.0, 'max': 0.0}, {'current': 3293.736, 'min': 0.0, 'max': 0.0}, {'current': 3293.736, 'min': 0.0, 'max': 0.0}, {'current': 3293.736, 'min': 0.0, 'max': 0.0}, {'current': 3293.736, 'min': 0.0, 'max': 0.0}, {'current': 3293.736, 'min': 0.0, 'max': 0.0}, {'current': 3293.736, 'min': 0.0, 'max': 0.0}, {'current': 3293.736, 'min': 0.0, 'max': 0.0}, {'current': 3293.736, 'min': 0.0, 'max': 0.0}], 'disk': {'/': {'total': 250.92389297485352, 'used': 151.9103240966797}}, 'gpu': 'NVIDIA GeForce RTX 3080 Laptop GPU', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 3080 Laptop GPU', 'memory_total': 17179869184}], 'memory': {'total': 30.221099853515625}}
+2024-05-18 00:06:32,593 INFO    HandlerThread:9077 [system_monitor.py:probe():224] Finished collecting system info
+2024-05-18 00:06:32,593 INFO    HandlerThread:9077 [system_monitor.py:probe():227] Publishing system info
+2024-05-18 00:06:32,593 DEBUG   HandlerThread:9077 [system_info.py:_save_conda():207] Saving list of conda packages installed into the current environment
+2024-05-18 00:06:32,609 ERROR   HandlerThread:9077 [system_info.py:_save_conda():221] Error saving conda packages: [Errno 2] No such file or directory: 'conda'
+Traceback (most recent call last):
+  File "/home/rafa/anaconda3/lib/python3.9/site-packages/wandb/sdk/internal/system/system_info.py", line 214, in _save_conda
+    subprocess.call(
+  File "/home/rafa/anaconda3/lib/python3.9/subprocess.py", line 349, in call
+    with Popen(*popenargs, **kwargs) as p:
+  File "/home/rafa/anaconda3/lib/python3.9/subprocess.py", line 951, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/home/rafa/anaconda3/lib/python3.9/subprocess.py", line 1821, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'conda'
+2024-05-18 00:06:32,610 DEBUG   HandlerThread:9077 [system_info.py:_save_conda():222] Saving conda packages done
+2024-05-18 00:06:32,610 INFO    HandlerThread:9077 [system_monitor.py:probe():229] Finished publishing system info
+2024-05-18 00:06:32,615 DEBUG   SenderThread:9077 [sender.py:send():379] send: files
+2024-05-18 00:06:32,615 INFO    SenderThread:9077 [sender.py:_save_file():1390] saving file wandb-metadata.json with policy now
+2024-05-18 00:06:32,748 DEBUG   HandlerThread:9077 [handler.py:handle_request():146] handle_request: python_packages
+2024-05-18 00:06:32,748 DEBUG   SenderThread:9077 [sender.py:send_request():406] send_request: python_packages
+2024-05-18 00:06:32,748 DEBUG   HandlerThread:9077 [handler.py:handle_request():146] handle_request: stop_status
+2024-05-18 00:06:32,749 DEBUG   SenderThread:9077 [sender.py:send_request():406] send_request: stop_status
+2024-05-18 00:06:32,751 DEBUG   HandlerThread:9077 [handler.py:handle_request():146] handle_request: internal_messages
+2024-05-18 00:06:33,096 DEBUG   SenderThread:9077 [sender.py:send():379] send: telemetry
+2024-05-18 00:06:33,298 INFO    Thread-12 :9077 [dir_watcher.py:_on_file_created():271] file/dir created: /home/rafa/fs_learning/wandb/run-20240518_000631-gzsy1hhs/files/requirements.txt
+2024-05-18 00:06:33,298 INFO    Thread-12 :9077 [dir_watcher.py:_on_file_created():271] file/dir created: /home/rafa/fs_learning/wandb/run-20240518_000631-gzsy1hhs/files/wandb-metadata.json
+2024-05-18 00:06:33,298 INFO    Thread-12 :9077 [dir_watcher.py:_on_file_created():271] file/dir created: /home/rafa/fs_learning/wandb/run-20240518_000631-gzsy1hhs/files/conda-environment.yaml
+2024-05-18 00:06:33,298 INFO    Thread-12 :9077 [dir_watcher.py:_on_file_created():271] file/dir created: /home/rafa/fs_learning/wandb/run-20240518_000631-gzsy1hhs/files/output.log
+2024-05-18 00:06:33,347 INFO    wandb-upload_0:9077 [upload_job.py:push():131] Uploaded file /tmp/tmppib35ztpwandb/jc8ie9q3-wandb-metadata.json
+2024-05-18 00:06:35,297 INFO    Thread-12 :9077 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/rafa/fs_learning/wandb/run-20240518_000631-gzsy1hhs/files/output.log
+2024-05-18 00:06:37,299 INFO    Thread-12 :9077 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/rafa/fs_learning/wandb/run-20240518_000631-gzsy1hhs/files/output.log
+2024-05-18 00:06:37,528 DEBUG   HandlerThread:9077 [handler.py:handle_request():146] handle_request: status_report
+2024-05-18 00:06:42,386 DEBUG   HandlerThread:9077 [handler.py:handle_request():146] handle_request: partial_history
+2024-05-18 00:06:42,387 DEBUG   HandlerThread:9077 [handler.py:handle_request():146] handle_request: partial_history
+2024-05-18 00:06:42,387 DEBUG   SenderThread:9077 [sender.py:send():379] send: history
+2024-05-18 00:06:42,388 DEBUG   SenderThread:9077 [sender.py:send_request():406] send_request: summary_record
+2024-05-18 00:06:42,389 INFO    SenderThread:9077 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-05-18 00:06:42,390 DEBUG   SenderThread:9077 [sender.py:send():379] send: history
+2024-05-18 00:06:42,390 DEBUG   SenderThread:9077 [sender.py:send_request():406] send_request: summary_record
+2024-05-18 00:06:42,390 INFO    SenderThread:9077 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-05-18 00:06:43,149 DEBUG   HandlerThread:9077 [handler.py:handle_request():146] handle_request: status_report
+2024-05-18 00:06:43,149 DEBUG   HandlerThread:9077 [handler.py:handle_request():146] handle_request: partial_history
+2024-05-18 00:06:43,150 DEBUG   SenderThread:9077 [sender.py:send():379] send: history
+2024-05-18 00:06:43,150 DEBUG   SenderThread:9077 [sender.py:send_request():406] send_request: summary_record
+2024-05-18 00:06:43,150 INFO    SenderThread:9077 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-05-18 00:06:43,301 INFO    Thread-12 :9077 [dir_watcher.py:_on_file_created():271] file/dir created: /home/rafa/fs_learning/wandb/run-20240518_000631-gzsy1hhs/files/wandb-summary.json
+2024-05-18 00:06:43,446 DEBUG   HandlerThread:9077 [handler.py:handle_request():146] handle_request: partial_history
+2024-05-18 00:06:43,447 DEBUG   HandlerThread:9077 [handler.py:handle_request():146] handle_request: partial_history
+2024-05-18 00:06:43,447 DEBUG   SenderThread:9077 [sender.py:send():379] send: history
+2024-05-18 00:06:43,448 DEBUG   SenderThread:9077 [sender.py:send_request():406] send_request: summary_record
+2024-05-18 00:06:43,449 INFO    SenderThread:9077 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-05-18 00:06:43,449 DEBUG   SenderThread:9077 [sender.py:send():379] send: history
+2024-05-18 00:06:43,449 DEBUG   SenderThread:9077 [sender.py:send_request():406] send_request: summary_record
+2024-05-18 00:06:43,449 INFO    SenderThread:9077 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-05-18 00:06:43,816 DEBUG   HandlerThread:9077 [handler.py:handle_request():146] handle_request: partial_history
+2024-05-18 00:06:43,817 DEBUG   SenderThread:9077 [sender.py:send():379] send: history
+2024-05-18 00:06:43,817 DEBUG   SenderThread:9077 [sender.py:send_request():406] send_request: summary_record
+2024-05-18 00:06:43,817 INFO    SenderThread:9077 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-05-18 00:06:44,022 DEBUG   HandlerThread:9077 [handler.py:handle_request():146] handle_request: partial_history
+2024-05-18 00:06:44,023 DEBUG   HandlerThread:9077 [handler.py:handle_request():146] handle_request: partial_history
+2024-05-18 00:06:44,023 DEBUG   SenderThread:9077 [sender.py:send():379] send: history
+2024-05-18 00:06:44,023 DEBUG   SenderThread:9077 [sender.py:send_request():406] send_request: summary_record
+2024-05-18 00:06:44,024 INFO    SenderThread:9077 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-05-18 00:06:44,024 DEBUG   SenderThread:9077 [sender.py:send():379] send: history
+2024-05-18 00:06:44,024 DEBUG   SenderThread:9077 [sender.py:send_request():406] send_request: summary_record
+2024-05-18 00:06:44,025 INFO    SenderThread:9077 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-05-18 00:06:44,301 INFO    Thread-12 :9077 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/rafa/fs_learning/wandb/run-20240518_000631-gzsy1hhs/files/wandb-summary.json
+2024-05-18 00:06:44,397 DEBUG   HandlerThread:9077 [handler.py:handle_request():146] handle_request: partial_history
+2024-05-18 00:06:44,398 DEBUG   SenderThread:9077 [sender.py:send():379] send: history
+2024-05-18 00:06:44,398 DEBUG   SenderThread:9077 [sender.py:send_request():406] send_request: summary_record
+2024-05-18 00:06:44,400 INFO    SenderThread:9077 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-05-18 00:06:44,604 DEBUG   HandlerThread:9077 [handler.py:handle_request():146] handle_request: partial_history
+2024-05-18 00:06:44,605 DEBUG   SenderThread:9077 [sender.py:send():379] send: history
+2024-05-18 00:06:44,605 DEBUG   HandlerThread:9077 [handler.py:handle_request():146] handle_request: partial_history
+2024-05-18 00:06:44,605 DEBUG   SenderThread:9077 [sender.py:send_request():406] send_request: summary_record
+2024-05-18 00:06:44,606 INFO    SenderThread:9077 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-05-18 00:06:44,607 DEBUG   SenderThread:9077 [sender.py:send():379] send: history
+2024-05-18 00:06:44,607 DEBUG   SenderThread:9077 [sender.py:send_request():406] send_request: summary_record
+2024-05-18 00:06:44,608 INFO    SenderThread:9077 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-05-18 00:06:44,974 DEBUG   HandlerThread:9077 [handler.py:handle_request():146] handle_request: partial_history
+2024-05-18 00:06:44,975 DEBUG   SenderThread:9077 [sender.py:send():379] send: history
+2024-05-18 00:06:44,975 DEBUG   SenderThread:9077 [sender.py:send_request():406] send_request: summary_record
+2024-05-18 00:06:44,975 INFO    SenderThread:9077 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-05-18 00:06:45,178 DEBUG   HandlerThread:9077 [handler.py:handle_request():146] handle_request: partial_history
+2024-05-18 00:06:45,179 DEBUG   SenderThread:9077 [sender.py:send():379] send: history
+2024-05-18 00:06:45,179 DEBUG   HandlerThread:9077 [handler.py:handle_request():146] handle_request: partial_history
+2024-05-18 00:06:45,179 DEBUG   SenderThread:9077 [sender.py:send_request():406] send_request: summary_record
+2024-05-18 00:06:45,180 INFO    SenderThread:9077 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-05-18 00:06:45,180 DEBUG   SenderThread:9077 [sender.py:send():379] send: history
+2024-05-18 00:06:45,180 DEBUG   SenderThread:9077 [sender.py:send_request():406] send_request: summary_record
+2024-05-18 00:06:45,181 INFO    SenderThread:9077 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-05-18 00:06:45,302 INFO    Thread-12 :9077 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/rafa/fs_learning/wandb/run-20240518_000631-gzsy1hhs/files/wandb-summary.json
+2024-05-18 00:06:45,302 INFO    Thread-12 :9077 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/rafa/fs_learning/wandb/run-20240518_000631-gzsy1hhs/files/output.log
+2024-05-18 00:06:45,550 DEBUG   HandlerThread:9077 [handler.py:handle_request():146] handle_request: partial_history
+2024-05-18 00:06:45,551 DEBUG   SenderThread:9077 [sender.py:send():379] send: history
+2024-05-18 00:06:45,551 DEBUG   SenderThread:9077 [sender.py:send_request():406] send_request: summary_record
+2024-05-18 00:06:45,551 INFO    SenderThread:9077 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-05-18 00:06:45,755 DEBUG   HandlerThread:9077 [handler.py:handle_request():146] handle_request: partial_history
+2024-05-18 00:06:45,756 DEBUG   HandlerThread:9077 [handler.py:handle_request():146] handle_request: partial_history
+2024-05-18 00:06:45,757 DEBUG   SenderThread:9077 [sender.py:send():379] send: history
+2024-05-18 00:06:45,757 DEBUG   SenderThread:9077 [sender.py:send_request():406] send_request: summary_record
+2024-05-18 00:06:45,757 INFO    SenderThread:9077 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-05-18 00:06:45,757 DEBUG   SenderThread:9077 [sender.py:send():379] send: history
+2024-05-18 00:06:45,757 DEBUG   SenderThread:9077 [sender.py:send_request():406] send_request: summary_record
+2024-05-18 00:06:45,758 INFO    SenderThread:9077 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-05-18 00:06:46,125 DEBUG   HandlerThread:9077 [handler.py:handle_request():146] handle_request: partial_history
+2024-05-18 00:06:46,126 DEBUG   SenderThread:9077 [sender.py:send():379] send: history
+2024-05-18 00:06:46,126 DEBUG   SenderThread:9077 [sender.py:send_request():406] send_request: summary_record
+2024-05-18 00:06:46,126 INFO    SenderThread:9077 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-05-18 00:06:46,302 INFO    Thread-12 :9077 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/rafa/fs_learning/wandb/run-20240518_000631-gzsy1hhs/files/wandb-summary.json
+2024-05-18 00:06:46,338 DEBUG   HandlerThread:9077 [handler.py:handle_request():146] handle_request: partial_history
+2024-05-18 00:06:46,338 DEBUG   SenderThread:9077 [sender.py:send():379] send: history
+2024-05-18 00:06:46,339 DEBUG   HandlerThread:9077 [handler.py:handle_request():146] handle_request: partial_history
+2024-05-18 00:06:46,339 DEBUG   SenderThread:9077 [sender.py:send_request():406] send_request: summary_record
+2024-05-18 00:06:46,340 INFO    SenderThread:9077 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-05-18 00:06:46,340 DEBUG   SenderThread:9077 [sender.py:send():379] send: history
+2024-05-18 00:06:46,340 DEBUG   SenderThread:9077 [sender.py:send_request():406] send_request: summary_record
+2024-05-18 00:06:46,340 INFO    SenderThread:9077 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-05-18 00:06:46,707 DEBUG   HandlerThread:9077 [handler.py:handle_request():146] handle_request: partial_history
+2024-05-18 00:06:46,708 DEBUG   SenderThread:9077 [sender.py:send():379] send: history
+2024-05-18 00:06:46,708 DEBUG   SenderThread:9077 [sender.py:send_request():406] send_request: summary_record
+2024-05-18 00:06:46,710 INFO    SenderThread:9077 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-05-18 00:06:46,915 DEBUG   HandlerThread:9077 [handler.py:handle_request():146] handle_request: partial_history
+2024-05-18 00:06:46,916 DEBUG   HandlerThread:9077 [handler.py:handle_request():146] handle_request: partial_history
+2024-05-18 00:06:46,917 DEBUG   SenderThread:9077 [sender.py:send():379] send: history
+2024-05-18 00:06:46,917 DEBUG   SenderThread:9077 [sender.py:send_request():406] send_request: summary_record
+2024-05-18 00:06:46,917 INFO    SenderThread:9077 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-05-18 00:06:46,917 DEBUG   SenderThread:9077 [sender.py:send():379] send: history
+2024-05-18 00:06:46,918 DEBUG   SenderThread:9077 [sender.py:send_request():406] send_request: summary_record
+2024-05-18 00:06:46,918 INFO    SenderThread:9077 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-05-18 00:06:47,287 DEBUG   HandlerThread:9077 [handler.py:handle_request():146] handle_request: partial_history
+2024-05-18 00:06:47,288 DEBUG   SenderThread:9077 [sender.py:send():379] send: history
+2024-05-18 00:06:47,288 DEBUG   SenderThread:9077 [sender.py:send_request():406] send_request: summary_record
+2024-05-18 00:06:47,288 INFO    SenderThread:9077 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-05-18 00:06:47,302 INFO    Thread-12 :9077 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/rafa/fs_learning/wandb/run-20240518_000631-gzsy1hhs/files/wandb-summary.json
+2024-05-18 00:06:47,303 INFO    Thread-12 :9077 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/rafa/fs_learning/wandb/run-20240518_000631-gzsy1hhs/files/output.log
+2024-05-18 00:06:47,493 DEBUG   HandlerThread:9077 [handler.py:handle_request():146] handle_request: partial_history
+2024-05-18 00:06:47,494 DEBUG   HandlerThread:9077 [handler.py:handle_request():146] handle_request: partial_history
+2024-05-18 00:06:47,494 DEBUG   SenderThread:9077 [sender.py:send():379] send: history
+2024-05-18 00:06:47,495 DEBUG   SenderThread:9077 [sender.py:send_request():406] send_request: summary_record
+2024-05-18 00:06:47,495 INFO    SenderThread:9077 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-05-18 00:06:47,495 DEBUG   SenderThread:9077 [sender.py:send():379] send: history
+2024-05-18 00:06:47,496 DEBUG   SenderThread:9077 [sender.py:send_request():406] send_request: summary_record
+2024-05-18 00:06:47,496 INFO    SenderThread:9077 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-05-18 00:06:47,749 DEBUG   HandlerThread:9077 [handler.py:handle_request():146] handle_request: stop_status
+2024-05-18 00:06:47,749 DEBUG   SenderThread:9077 [sender.py:send_request():406] send_request: stop_status
+2024-05-18 00:06:47,749 DEBUG   HandlerThread:9077 [handler.py:handle_request():146] handle_request: internal_messages
+2024-05-18 00:06:47,906 DEBUG   HandlerThread:9077 [handler.py:handle_request():146] handle_request: partial_history
+2024-05-18 00:06:48,035 DEBUG   SenderThread:9077 [sender.py:send():379] send: history
+2024-05-18 00:06:48,036 DEBUG   SenderThread:9077 [sender.py:send_request():406] send_request: summary_record
+2024-05-18 00:06:48,036 INFO    SenderThread:9077 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-05-18 00:06:48,067 DEBUG   HandlerThread:9077 [handler.py:handle_request():146] handle_request: partial_history
+2024-05-18 00:06:48,068 DEBUG   HandlerThread:9077 [handler.py:handle_request():146] handle_request: partial_history
+2024-05-18 00:06:48,068 DEBUG   SenderThread:9077 [sender.py:send():379] send: history
+2024-05-18 00:06:48,069 DEBUG   SenderThread:9077 [sender.py:send_request():406] send_request: summary_record
+2024-05-18 00:06:48,069 INFO    SenderThread:9077 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-05-18 00:06:48,069 DEBUG   SenderThread:9077 [sender.py:send():379] send: history
+2024-05-18 00:06:48,069 DEBUG   SenderThread:9077 [sender.py:send_request():406] send_request: summary_record
+2024-05-18 00:06:48,070 INFO    SenderThread:9077 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-05-18 00:06:48,303 INFO    Thread-12 :9077 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/rafa/fs_learning/wandb/run-20240518_000631-gzsy1hhs/files/wandb-summary.json
+2024-05-18 00:06:48,439 DEBUG   HandlerThread:9077 [handler.py:handle_request():146] handle_request: status_report
+2024-05-18 00:06:48,440 DEBUG   HandlerThread:9077 [handler.py:handle_request():146] handle_request: partial_history
+2024-05-18 00:06:48,440 DEBUG   SenderThread:9077 [sender.py:send():379] send: history
+2024-05-18 00:06:48,441 DEBUG   SenderThread:9077 [sender.py:send_request():406] send_request: summary_record
+2024-05-18 00:06:48,441 INFO    SenderThread:9077 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-05-18 00:06:49,303 INFO    Thread-12 :9077 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/rafa/fs_learning/wandb/run-20240518_000631-gzsy1hhs/files/wandb-summary.json
+2024-05-18 00:06:49,303 INFO    Thread-12 :9077 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/rafa/fs_learning/wandb/run-20240518_000631-gzsy1hhs/files/output.log
+2024-05-18 00:06:50,521 INFO    MainThread:9077 [internal.py:handle_exit():76] Internal process exited

@@ -1,0 +1,88 @@
+Not using distributed mode
+Namespace(batch_size=1, num_classes=1000, epochs=100, fp16=False, output_dir='outputs/original_diet_small_lr1e-4', device='cuda:0', seed=0, data_path='/datasets01/imagenet_full_size/061417/', pretrained_checkpoint_path='.', dataset='mini_imagenet', nClsEpisode=5, nSupport=5, nQuery=15, nValEpisode=120, nEpisode=2000, image_size=128, base_sources=['aircraft', 'cu_birds', 'dtd', 'fungi', 'ilsvrc_2012', 'omniglot', 'quickdraw', 'vgg_flower'], val_sources=['aircraft', 'cu_birds', 'dtd', 'fungi', 'ilsvrc_2012', 'omniglot', 'quickdraw', 'vgg_flower'], test_sources=['traffic_sign', 'mscoco', 'ilsvrc_2012', 'omniglot', 'aircraft', 'cu_birds', 'dtd', 'quickdraw', 'fungi', 'vgg_flower'], shuffle=True, train_transforms=['random_resized_crop', 'jitter', 'random_flip', 'to_tensor', 'normalize'], test_transforms=['resize', 'center_crop', 'to_tensor', 'normalize'], num_ways=None, num_support=None, num_query=None, min_ways=5, max_ways_upper_bound=50, max_num_query=10, max_support_set_size=500, max_support_size_contrib_per_class=100, min_examples_in_class=0, min_log_weight=-0.6931471805599453, max_log_weight=0.6931471805599453, ignore_bilevel_ontology=False, ignore_dag_ontology=False, ignore_hierarchy_probability=0.0, test_n_way=5, n_shot=5, cdfsl_domains=['EuroSAT', 'ISIC', 'CropDisease', 'ChestX'], arch='deit_small_patch16', patch_size=16, pretrained_weights='', checkpoint_key='teacher', unused_params=False, no_pretrain=False, deploy='vanilla', num_adapters=1, ada_steps=40, ada_lr=0.05, aug_prob=0.9, aug_types=['color', 'translation'], img_size=224, drop=0.0, drop_path=0.1, model_ema=False, model_ema_decay=0.99996, model_ema_force_cpu=False, opt='adamw', opt_eps=1e-08, opt_betas=None, clip_grad=None, momentum=0.9, weight_decay=0.05, sched='cosine', lr=1e-06, lr_noise=None, lr_noise_pct=0.67, lr_noise_std=1.0, warmup_lr=1e-06, min_lr=1e-06, decay_epochs=30, warmup_epochs=5, cooldown_epochs=10, patience_epochs=10, decay_rate=0.1, color_jitter=0.4, aa='rand-m9-mstd0.5-inc1', smoothing=0.0, train_interpolation='bicubic', repeated_aug=False, reprob=0.25, remode='pixel', recount=1, resplit=False, mixup=0.0, cutmix=0.0, cutmix_minmax=None, mixup_prob=1.0, mixup_switch_prob=0.5, mixup_mode='batch', teacher_model='regnety_160', teacher_path='', distillation_type='none', distillation_alpha=0.5, distillation_tau=1.0, resume='', start_epoch=0, eval=False, dist_eval=False, num_workers=10, pin_mem=True, world_size=1, dist_url='env://', nvib=True, delta=1.0, alpha_tau=0.0, stdev_tau=0.0, lambda_klg=0.001, lambda_kld=0.001, nvib_layers=[0, 1, 2, 3, 4, 5], distributed=False)
+Creating model: ProtoNet deit_small_patch16
+Using NVIB Vision Transformer
+Layer 0 has nvib_layer
+Layer 1 has nvib_layer
+Layer 2 has nvib_layer
+Layer 3 has nvib_layer
+Layer 4 has nvib_layer
+Layer 5 has nvib_layer
+removing key head.weight from pretrained checkpoint
+removing key head.bias from pretrained checkpoint
+Pretrained weights found at https://dl.fbaipublicfiles.com/deit/deit_small_patch16_224-cd65a155.pth
+number of params: 23444360
+Start training for 100 epochs
+Traceback (most recent call last):
+  File "/home/rafa/fs_learning/engine.py", line 54, in train_one_epoch
+    output, (klg, kld) = model(SupportTensor, SupportLabel, x, set_mata_training_mode)
+  File "/home/rafa/anaconda3/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/rafa/anaconda3/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/rafa/fs_learning/models/protonet.py", line 41, in forward
+    supp_f, (klg_supp, kld_supp) = self.backbone.forward(supp_x.view(-1, C, H, W),set_mata_training_mode=set_mata_training_mode)
+  File "/home/rafa/fs_learning/models/nvib_vision_transformer.py", line 453, in forward
+    x, kls = blk(x, set_mata_training_mode=set_mata_training_mode)
+  File "/home/rafa/anaconda3/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/rafa/anaconda3/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/rafa/fs_learning/models/nvib_vision_transformer.py", line 271, in forward
+    nvib_tuple = self.nvib_layer(x_norm, set_mata_training_mode=set_mata_training_mode)
+  File "/home/rafa/anaconda3/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/rafa/anaconda3/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/rafa/fs_learning/models/nvib_layer.py", line 331, in forward
+    pi = self.reparameterize_dirichlet(alpha, mask, set_mata_training_mode=set_mata_training_mode)
+  File "/home/rafa/fs_learning/models/nvib_layer.py", line 203, in reparameterize_dirichlet
+    gamma_dist = torch.distributions.Gamma(alpha, torch.ones_like(alpha))# 类似高斯分布从正态分布采样噪声
+  File "/home/rafa/anaconda3/lib/python3.9/site-packages/torch/distributions/gamma.py", line 58, in __init__
+    super().__init__(batch_shape, validate_args=validate_args)
+  File "/home/rafa/anaconda3/lib/python3.9/site-packages/torch/distributions/distribution.py", line 68, in __init__
+    raise ValueError(
+ValueError: Expected parameter concentration (Tensor of shape (25, 198, 1)) of distribution Gamma(concentration: torch.Size([25, 198, 1]), rate: torch.Size([25, 198, 1])) to satisfy the constraint GreaterThan(lower_bound=0.0), but found invalid values:
+tensor([[[0.0000],
+         [2.5140],
+         [3.0006],
+         ...,
+         [1.8800],
+         [2.2554],
+         [3.1366]],
+        [[0.0000],
+         [2.5140],
+         [2.4053],
+         ...,
+         [3.2838],
+         [3.0668],
+         [2.9626]],
+        [[0.0000],
+         [2.5140],
+         [5.1480],
+         ...,
+         [2.6310],
+         [2.4309],
+         [2.3643]],
+        ...,
+        [[0.0000],
+         [2.5140],
+         [1.9989],
+         ...,
+         [2.1349],
+         [2.2232],
+         [1.8907]],
+        [[0.0000],
+         [2.5140],
+         [2.3807],
+         ...,
+         [2.3493],
+         [2.1711],
+         [2.2943]],
+        [[0.0000],
+         [2.5140],
+         [2.0728],
+         ...,
+         [1.7316],
+         [1.7234],
+         [1.7665]]], device='cuda:0', grad_fn=<CatBackward0>)
