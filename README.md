@@ -37,7 +37,6 @@ The code was tested with Python 3.8.1 and Pytorch >= 1.7.0.
 ```
 cd scripts
 sh download_cifarfs.sh
-sh download_miniimagenet.sh
 ```
 To use these two datasets, set `--dataset cifar_fs` or `--dataset mini_imagenet`.
 
@@ -53,7 +52,7 @@ git clone https://huggingface.co/datasets/hushell/meta_dataset_h5
 ```
 
 ## Pre-training
-The pretrained architecture we used is DeiT-Small (deit_small_patch16_224).
+The  architecture we used is DeiT-Small (deit_small_patch16_224). The pretrained weight will be loaded automatically.
 
 ## Default NVIB parameters
 
@@ -71,28 +70,27 @@ It is recommended to run on one GPU.
 We use `args.nSupport` to set the number of shots. The 5-way-5-shot training command of CIFAR-FS writes as
 ```
 python -m torch.distributed.launch --nproc_per_node=1   --use_env  main.py   --output outputs/your_experiment_name  --nvib --nvib_layers 0 1 2 3 4 5  --delta 1 --alpha_tau 0  --stdev_tau 0 --lambda_klg 0.01 --lambda_kld 0.01    --dataset cifar_fs --epoch 100 --lr 1e-4 --arch deit_small_patch16 --dist-eval --nSupport 5 --fp16   
-
-
 ```
 
-### On Meta-Dataset with ImageNet only
+### On Meta-Dataset (Trained on ImageNet only)
+It is recommended to run on four GPU.
 ```
-python -m torch.distributed.launch --nproc_per_node=4 --use_env main.py --output outputs/your_experiment_name --nvib --nvib_layers 0 1 2 3 4 5  --delta 1  --alpha_tau -3 --stdev_tau 0 --lambda_klg 0.001 --lambda_kld 0.001  --dataset meta_dataset --data-path /path/to/meta-dataset/ --num_workers 4  --base_sources ilsvrc_2012 --epoch 100 --lr 5e-5 --arch deit_small_patch16 --dist-eval  --fp16
+python -m torch.distributed.launch --nproc_per_node=4 --use_env main.py --output outputs/your_experiment_name --nvib --nvib_layers 0 1 2 3 4 5  --delta 1  --alpha_tau -3 --stdev_tau 0 --lambda_klg 0.001 --lambda_kld 0.001  --dataset meta_dataset --data-path /path/to/meta-dataset/ --num_workers 4  --base_sources ilsvrc_2012  --test_sources traffic_sign mscoco  omniglot aircraft cu_birds dtd quickdraw fungi vgg_flower --epoch 100 --lr 5e-5 --arch deit_small_patch16 --dist-eval  --fp16
 ```
-Set   `--base_sources ilsvrc_2012` to enable training on IN1K.
+Set   `--base_sources ilsvrc_2012` to enable training on ImageNet.
 
 
 ## Meta-Testing
-
-### For datasets without domain shift
-Copy the same command for training, which can be found in `outputs/your_experiment_name/log.txt` (should be the first line or search keyword main.py),
-and add `--eval`.
-
+Set ```--resume``` as your trained model's path.
+### For datasets without domain shift (CIFAR-FS)
+```
+python -m torch.distributed.launch --nproc_per_node=1   --use_env  main.py  --resume outputs/your_experiment_name/best.pth  --output outputs/your_experiment_name  --nvib --nvib_layers 0 1 2 3 4 5  --delta 1 --alpha_tau 0  --stdev_tau 0 --lambda_klg 0.01 --lambda_kld 0.01   --dataset cifar_fs --epoch 100 --lr 1e-4 --arch deit_small_patch16 --eval --nSupport 5 --fp16  
+```
 ### Fine-tuning on meta-test tasks
 
-A meta-testing command example for Meta-Dataset  is: 
+A meta-testing command example for Meta-Dataset is: 
 ``` 
-python -m torch.distributed.launch --nproc_per_node=1 --use_env test_meta_dataset.py --data-path /path/to/meta_dataset/ --nvib --nvib_layers 0 1 2 3 4 5 -delta 1 --alpha_tau -3 --stdev_tau 0 --lambda_klg 0.001 --lambda_kld 0.001  --dataset meta_dataset --arch deit_small_patch16 --base_sources ilsvrc_2012  --output outputs/your_experiment_name --resume outputs/your_experiment_name/best.pth --dist-eval 
+python -m torch.distributed.launch --nproc_per_node=1 --use_env test_meta_dataset.py --resume outputs/your_experiment_name/best.pth  --output outputs/your_experiment_name  --data-path /path/to/meta_dataset/ --nvib --nvib_layers 0 1 2 3 4 5 -delta 1 --alpha_tau -3 --stdev_tau 0 --lambda_klg 0.001 --lambda_kld 0.001  --dataset meta_dataset --arch deit_small_patch16 --base_sources ilsvrc_2012 --test_sources traffic_sign mscoco  omniglot aircraft cu_birds dtd quickdraw fungi vgg_flower  --dist-eval 
 ``` 
 
 
